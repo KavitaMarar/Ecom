@@ -30,7 +30,7 @@ export class CategoryService {
     {
         const category=await this.categoryModel.findById(id);
         if(!category){
-            throw new NotFoundException('Product not found');
+            throw new NotFoundException('Category not found');
         }
         return category
    }
