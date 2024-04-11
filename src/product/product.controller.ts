@@ -28,7 +28,6 @@ export class ProductController {
         product:CreateProductDto,
         @Req() req
     ):Promise<Product>{
-
         return this.productService.create(product,req.user);
     }
 
