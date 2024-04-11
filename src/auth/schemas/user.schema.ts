@@ -25,4 +25,6 @@ export class User{
     password:string;
 }
 
+/////for checking git for a particular file
+
 export const UserSchema=SchemaFactory.createForClass(User)
