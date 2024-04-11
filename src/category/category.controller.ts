@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Get, Param, Post, Put ,Delete} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post ,Delete, Patch} from '@nestjs/common';
 import { Category } from './schemas/category.schemas';
 import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto/create.category.dto';
@@ -28,7 +28,7 @@ export class CategoryController {
         return this.categoryService.findById(id);
     }
     
-    @Put(':id')
+    @Patch(':id')
     async updateProduct(
         @Param('id') id:string,
         @Body()

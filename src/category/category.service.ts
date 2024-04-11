@@ -29,7 +29,8 @@ export class CategoryService {
     async findById(id:string):Promise<Category>
     {
         const category=await this.categoryModel.findById(id);
-        if(!category){
+        if(!category)
+        {
             throw new NotFoundException('Category not found');
         }
         return category

@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
-import { Body, Controller,Delete,Get, Param, Post, Put, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller,Delete,Get, Param, Patch, Post, Put, Req, UseGuards } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { Product } from './schemas/product.schema';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -36,7 +36,7 @@ export class ProductController {
         return this.productService.findById(id)
     }
 
-    @Put(':id')
+    @Patch(':id')
     async updateProduct(
         @Param('id') id:string,
         @Body()
