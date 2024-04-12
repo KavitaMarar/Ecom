@@ -41,4 +41,6 @@ export class CategoryController {
     async deleteProduct(@Param ('id') id:string):Promise<Category>{
         return this.categoryService.deleteById(id)
     }
+
+    
 }

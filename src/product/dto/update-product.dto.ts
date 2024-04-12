@@ -1,6 +1,12 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
+
+/* eslint-disable prettier/prettier */
+import { ApiProperty } from "@nestjs/swagger";
 import { IsEmpty, IsNotEmpty, IsNumber, IsString } from "class-validator";
 import { User } from "src/auth/schemas/user.schema";
+import { Category } from "src/category/schemas/category.schemas";
 
 /* eslint-disable prettier/prettier */
 export class UpdateProductDto{
@@ -18,4 +24,8 @@ export class UpdateProductDto{
 
     @IsEmpty({message:'You cannot pass user id'})
     readonly user:User
+
+    // @ApiProperty()
+    // readonly category:Category[]
+
 }

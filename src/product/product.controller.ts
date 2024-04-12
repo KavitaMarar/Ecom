@@ -28,11 +28,13 @@ export class ProductController {
         product:CreateProductDto,
         @Req() req
     ):Promise<Product>{
+
         return this.productService.create(product,req.user);
     }
 
     @Get(':id')
-    async getProduct(@Param ('id') id:string):Promise<Product>{
+    async getProduct(@Param ('id') id:string):Promise<Product>
+    {
         return this.productService.findById(id)
     }
 
