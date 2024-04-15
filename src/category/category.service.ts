@@ -5,6 +5,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Category } from './schemas/category.schemas';
 import mongoose from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
+import { Product } from 'src/product/schemas/product.schema';
 
 @Injectable()
 export class CategoryService {
@@ -47,6 +48,16 @@ export class CategoryService {
     async deleteById(id:string):Promise<Category>
     {
         return await this.categoryModel.findByIdAndDelete(id)
+   }
+
+   async showDetails(id:string):Promise<Category>
+   {
+    const products=await this.categoryModel.findById(id);
+    if(products.category_id===Category["category_id"])
+        {
+
+            return products
+        }
    }
 }
 

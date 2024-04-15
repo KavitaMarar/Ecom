@@ -7,25 +7,25 @@ import { Category } from "src/category/schemas/category.schemas";
 import { ApiProperty } from "@nestjs/swagger";
 
 export class CreateProductDto{
-    // @ApiProperty()
+    @ApiProperty()
     @IsNotEmpty()
     @IsString()
     readonly name:string;
     
-    // @ApiProperty()
+    @ApiProperty()
     @IsNotEmpty()
     @IsString()
     readonly description:string;
 
-    // @ApiProperty()
+    @ApiProperty()
     @IsNotEmpty()
     @IsNumber()
     readonly price:number;
 
-    // @ApiProperty()
+    @ApiProperty()
     @IsEmpty({message:'You cannot pass user id'})
-    readonly user:User
+    readonly user:User[]
 
-    // @ApiProperty()
-    // readonly category:Category[]
+    @ApiProperty()
+    readonly category:Category[]
 }

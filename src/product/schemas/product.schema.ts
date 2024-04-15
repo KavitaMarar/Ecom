@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import mongoose from "mongoose";
+
 import { User } from "src/auth/schemas/user.schema";
+import { Category } from "src/category/schemas/category.schemas";
 
 // export enum Category{
 //     HOME='Home',
@@ -27,8 +28,11 @@ export class Product{
     @Prop()
     price:number
 
-    @Prop({type:mongoose.Schema.Types.ObjectId,ref:'User'})
-    user:User;
+    @Prop()    // {type:mongoose.Schema.Types.ObjectId,ref:'User'}
+    user:User[];
+
+    @Prop()
+    category:Category[]
 }
 
 

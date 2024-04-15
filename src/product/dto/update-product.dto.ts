@@ -23,9 +23,9 @@ export class UpdateProductDto{
     readonly price:number;
 
     @IsEmpty({message:'You cannot pass user id'})
-    readonly user:User
+    readonly user:User[]
 
-    // @ApiProperty()
-    // readonly category:Category[]
+    @ApiProperty()
+     readonly category:Category[]
 
 }

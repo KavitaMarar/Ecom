@@ -42,5 +42,10 @@ export class CategoryController {
         return this.categoryService.deleteById(id)
     }
 
-    
+    @Get('product/:id')
+    async showDetails(@Param('id')id:string):Promise<Category>
+    {
+        return this.categoryService.findById(id);
+    }
 }
+ 
